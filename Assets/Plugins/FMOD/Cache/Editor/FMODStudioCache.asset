@@ -1,0 +1,1496 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8264567154102379175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Tuile/Ui/Failed
+  m_EditorClassIdentifier: 
+  Path: event:/Tuile/Ui/Failed
+  Guid:
+    Data1: -2107435079
+    Data2: 1127671406
+    Data3: 346738843
+    Data4: -1217575028
+  Banks:
+  - {fileID: -3716144231502446623}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1500
+--- !u!114 &-7930798537145646032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/poubelle/Charactere/Water_fall
+  m_EditorClassIdentifier: 
+  Path: event:/poubelle/Charactere/Water_fall
+  Guid:
+    Data1: -1494801266
+    Data2: 1133535839
+    Data3: 1598877114
+    Data4: 1989412056
+  Banks:
+  - {fileID: -3716144231502446623}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1050
+--- !u!114 &-7582101423222187827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/poubelle/Blockld/Laser
+  m_EditorClassIdentifier: 
+  Path: event:/poubelle/Blockld/Laser
+  Guid:
+    Data1: 1071789620
+    Data2: 1172006930
+    Data3: -1660394613
+    Data4: -767043261
+  Banks:
+  - {fileID: -3716144231502446623}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2200
+--- !u!114 &-7389231202815593722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Tuile/Character/Actions/Rock
+  m_EditorClassIdentifier: 
+  Path: event:/Tuile/Character/Actions/Rock
+  Guid:
+    Data1: 1324996152
+    Data2: 1305034486
+    Data3: -1534056035
+    Data4: -721890001
+  Banks:
+  - {fileID: -3716144231502446623}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 800
+--- !u!114 &-7146051039725933029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/poubelle/Charactere/Pistol/Bullet Shot
+  m_EditorClassIdentifier: 
+  Path: event:/poubelle/Charactere/Pistol/Bullet Shot
+  Guid:
+    Data1: -887317555
+    Data2: 1171515063
+    Data3: 840902317
+    Data4: 320406956
+  Banks:
+  - {fileID: -3716144231502446623}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-6745880306172289135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/poubelle/Charactere/Cha_Collect_Item
+  m_EditorClassIdentifier: 
+  Path: event:/poubelle/Charactere/Cha_Collect_Item
+  Guid:
+    Data1: -1596777086
+    Data2: 1174823569
+    Data3: -1594893131
+    Data4: 2076160007
+  Banks:
+  - {fileID: -3716144231502446623}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 600
+--- !u!114 &-6068271829427382844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Tuile/Music/Hub
+  m_EditorClassIdentifier: 
+  Path: event:/Tuile/Music/Hub
+  Guid:
+    Data1: 1104693991
+    Data2: 1193422054
+    Data3: -653900655
+    Data4: -97661629
+  Banks:
+  - {fileID: -3716144231502446623}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 178203
+--- !u!114 &-4441478588763787462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/poubelle/Charactere/Cha_Release_Item
+  m_EditorClassIdentifier: 
+  Path: event:/poubelle/Charactere/Cha_Release_Item
+  Guid:
+    Data1: -981485048
+    Data2: 1324922598
+    Data3: 2026141075
+    Data4: 1922393043
+  Banks:
+  - {fileID: -3716144231502446623}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 400
+--- !u!114 &-4019859843481648470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Tuile/Tile/Terraformingdown
+  m_EditorClassIdentifier: 
+  Path: event:/Tuile/Tile/Terraformingdown
+  Guid:
+    Data1: -393749087
+    Data2: 1309704189
+    Data3: 703059133
+    Data4: -1977558972
+  Banks:
+  - {fileID: -3716144231502446623}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 8677118555228156943}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-3914949842345859215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Stomp/GroundType
+  m_EditorClassIdentifier: 
+  Name: GroundType
+  StudioPath: 
+  Min: 0
+  Max: 3
+  Default: 0
+  ID:
+    data1: 2037150591
+    data2: 3285532144
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - Rock
+  - Wood
+  - Neutral
+  - Sand
+  Exists: 1
+--- !u!114 &-3716144231502446623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD/FMOD Bateau Tile/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638561142987439084
+  FileSizes:
+  - Name: Desktop
+    Value: 10657920
+  Exists: 1
+--- !u!114 &-3417384094063455893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Tuile/Character/Voix/Cast
+  m_EditorClassIdentifier: 
+  Path: event:/Tuile/Character/Voix/Cast
+  Guid:
+    Data1: -1691195667
+    Data2: 1261285738
+    Data3: -1395599182
+    Data4: 518566486
+  Banks:
+  - {fileID: -3716144231502446623}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &-3327214790484494020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Tuile/Character/Voix/Laugh
+  m_EditorClassIdentifier: 
+  Path: event:/Tuile/Character/Voix/Laugh
+  Guid:
+    Data1: 1276261573
+    Data2: 1206128250
+    Data3: 221185435
+    Data4: 456029932
+  Banks:
+  - {fileID: -3716144231502446623}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &-2936931094898499884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Tuile/Music/Niveau 1
+  m_EditorClassIdentifier: 
+  Path: event:/Tuile/Music/Niveau 1
+  Guid:
+    Data1: 1160132732
+    Data2: 1234764037
+    Data3: -788196937
+    Data4: 1535034939
+  Banks:
+  - {fileID: -3716144231502446623}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 600000
+--- !u!114 &-2215656243864371095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Tuile/Character/Voix/Beatbox
+  m_EditorClassIdentifier: 
+  Path: event:/Tuile/Character/Voix/Beatbox
+  Guid:
+    Data1: -1351193975
+    Data2: 1276982172
+    Data3: 2024596150
+    Data4: -1820703011
+  Banks:
+  - {fileID: -3716144231502446623}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 40544
+--- !u!114 &-2005537236394244237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/poubelle/Charactere/Rock_Mining
+  m_EditorClassIdentifier: 
+  Path: event:/poubelle/Charactere/Rock_Mining
+  Guid:
+    Data1: -1604659934
+    Data2: 1188687210
+    Data3: -2022128713
+    Data4: 434779957
+  Banks:
+  - {fileID: -3716144231502446623}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 800
+--- !u!114 &-1356287828023186939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/poubelle/Tilee/Blockdown
+  m_EditorClassIdentifier: 
+  Path: event:/poubelle/Tilee/Blockdown
+  Guid:
+    Data1: -1401077410
+    Data2: 1180960569
+    Data3: 461788829
+    Data4: -1621981814
+  Banks:
+  - {fileID: -3716144231502446623}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1600
+--- !u!114 &-562429710834906958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Tuile/Character/Actions/Move
+  m_EditorClassIdentifier: 
+  Path: event:/Tuile/Character/Actions/Move
+  Guid:
+    Data1: 660551976
+    Data2: 1146420415
+    Data3: 1173595026
+    Data4: 1411376451
+  Banks:
+  - {fileID: -3716144231502446623}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 6252141637380521600}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-112004275394127329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/poubelle/Tilee/Blockup
+  m_EditorClassIdentifier: 
+  Path: event:/poubelle/Tilee/Blockup
+  Guid:
+    Data1: 606503615
+    Data2: 1336021468
+    Data3: -996132194
+    Data4: -850408183
+  Banks:
+  - {fileID: -3716144231502446623}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2400
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: 
+  EditorBanks:
+  - {fileID: 8065664754641919336}
+  - {fileID: -3716144231502446623}
+  EditorEvents:
+  - {fileID: 6200627695394108661}
+  - {fileID: 7448712034848018108}
+  - {fileID: 2429374131167543713}
+  - {fileID: -4441478588763787462}
+  - {fileID: -2005537236394244237}
+  - {fileID: 449471085449880980}
+  - {fileID: 3730819685659511018}
+  - {fileID: -562429710834906958}
+  - {fileID: 3936608242453793934}
+  - {fileID: 3294629972181343424}
+  - {fileID: 1125777482319150624}
+  - {fileID: -7582101423222187827}
+  - {fileID: -7389231202815593722}
+  - {fileID: 9211225471906779016}
+  - {fileID: 7351941617614126084}
+  - {fileID: 1401528880917960896}
+  - {fileID: 1731762555543816285}
+  - {fileID: 6359802989981734732}
+  - {fileID: -1356287828023186939}
+  - {fileID: 2433445242020194529}
+  - {fileID: 5575131151492690794}
+  - {fileID: 5722120372380485356}
+  - {fileID: 9115076691067116846}
+  - {fileID: 7837688007217801941}
+  - {fileID: -2936931094898499884}
+  - {fileID: 7893276282672357135}
+  - {fileID: -6745880306172289135}
+  - {fileID: -2215656243864371095}
+  - {fileID: -7930798537145646032}
+  - {fileID: 536407706371861600}
+  - {fileID: -4019859843481648470}
+  - {fileID: 1420637633229237557}
+  - {fileID: 4540669607016407484}
+  - {fileID: 3226615218097082377}
+  - {fileID: 1525537774453001701}
+  - {fileID: 3046932109244429412}
+  - {fileID: -8264567154102379175}
+  - {fileID: 70229639594444399}
+  - {fileID: -112004275394127329}
+  - {fileID: -3327214790484494020}
+  - {fileID: -7146051039725933029}
+  - {fileID: 1924018523590358293}
+  - {fileID: 4498500390706560964}
+  - {fileID: -6068271829427382844}
+  - {fileID: -3417384094063455893}
+  - {fileID: 5690091745990550083}
+  - {fileID: 74604528571149469}
+  - {fileID: 1844559918990117084}
+  EditorParameters: []
+  MasterBanks:
+  - {fileID: -3716144231502446623}
+  StringsBanks:
+  - {fileID: 8065664754641919336}
+  cacheTime: 638561142987449550
+  cacheVersion: 131591
+--- !u!114 &70229639594444399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Tuile/Character/Voix/Jump
+  m_EditorClassIdentifier: 
+  Path: event:/Tuile/Character/Voix/Jump
+  Guid:
+    Data1: -1774812226
+    Data2: 1337214523
+    Data3: 1270749070
+    Data4: -2088953630
+  Banks:
+  - {fileID: -3716144231502446623}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &74604528571149469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Tuile/Tile/TileCreation
+  m_EditorClassIdentifier: 
+  Path: event:/Tuile/Tile/TileCreation
+  Guid:
+    Data1: 1461015291
+    Data2: 1092049385
+    Data3: 1160450709
+    Data4: -713599746
+  Banks:
+  - {fileID: -3716144231502446623}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1500
+--- !u!114 &449471085449880980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Tuile/Monster/Dying_Chicken
+  m_EditorClassIdentifier: 
+  Path: event:/Tuile/Monster/Dying_Chicken
+  Guid:
+    Data1: -792432860
+    Data2: 1074831051
+    Data3: -762815854
+    Data4: 1321083193
+  Banks:
+  - {fileID: -3716144231502446623}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3552
+--- !u!114 &536407706371861600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Tuile/Environnement/Ocean
+  m_EditorClassIdentifier: 
+  Path: event:/Tuile/Environnement/Ocean
+  Guid:
+    Data1: 1997402010
+    Data2: 1247331098
+    Data3: 1521908919
+    Data4: 934408
+  Banks:
+  - {fileID: -3716144231502446623}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 181000
+--- !u!114 &1125777482319150624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Tuile/Character/Actions/Tree
+  m_EditorClassIdentifier: 
+  Path: event:/Tuile/Character/Actions/Tree
+  Guid:
+    Data1: 649855793
+    Data2: 1177349640
+    Data3: 115395501
+    Data4: -2015645469
+  Banks:
+  - {fileID: -3716144231502446623}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 820
+--- !u!114 &1401528880917960896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Tuile/Character/Voix/Interaction
+  m_EditorClassIdentifier: 
+  Path: event:/Tuile/Character/Voix/Interaction
+  Guid:
+    Data1: 931211084
+    Data2: 1089262439
+    Data3: 275759805
+    Data4: -200404727
+  Banks:
+  - {fileID: -3716144231502446623}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &1420637633229237557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/poubelle/Charactere/Pistol/Bullet Impact Metal
+  m_EditorClassIdentifier: 
+  Path: event:/poubelle/Charactere/Pistol/Bullet Impact Metal
+  Guid:
+    Data1: 106171298
+    Data2: 1142353664
+    Data3: -297619064
+    Data4: 2021866935
+  Banks:
+  - {fileID: -3716144231502446623}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &1525537774453001701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Tuile/Character/Voix/Hit
+  m_EditorClassIdentifier: 
+  Path: event:/Tuile/Character/Voix/Hit
+  Guid:
+    Data1: -1125893712
+    Data2: 1289833345
+    Data3: -2005098306
+    Data4: 614512338
+  Banks:
+  - {fileID: -3716144231502446623}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 500
+--- !u!114 &1731762555543816285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/poubelle/Tilee/Bumper
+  m_EditorClassIdentifier: 
+  Path: event:/poubelle/Tilee/Bumper
+  Guid:
+    Data1: 719453523
+    Data2: 1243556471
+    Data3: -694489199
+    Data4: -1156551974
+  Banks:
+  - {fileID: -3716144231502446623}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 368
+--- !u!114 &1844559918990117084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Tuile/Monster/Angry_Chicken
+  m_EditorClassIdentifier: 
+  Path: event:/Tuile/Monster/Angry_Chicken
+  Guid:
+    Data1: 1465094141
+    Data2: 1216252532
+    Data3: -2063118164
+    Data4: 17260474
+  Banks:
+  - {fileID: -3716144231502446623}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 7203
+--- !u!114 &1924018523590358293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Tuile/Ui/Paper
+  m_EditorClassIdentifier: 
+  Path: event:/Tuile/Ui/Paper
+  Guid:
+    Data1: -831466034
+    Data2: 1098281387
+    Data3: -1527343951
+    Data4: 2051359714
+  Banks:
+  - {fileID: -3716144231502446623}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 500
+--- !u!114 &2429374131167543713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/poubelle/Charactere/Moove
+  m_EditorClassIdentifier: 
+  Path: event:/poubelle/Charactere/Moove
+  Guid:
+    Data1: 854580231
+    Data2: 1195913429
+    Data3: 2013552009
+    Data4: -1727032044
+  Banks:
+  - {fileID: -3716144231502446623}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 500
+--- !u!114 &2433445242020194529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Tuile/Ui/ChestComplete
+  m_EditorClassIdentifier: 
+  Path: event:/Tuile/Ui/ChestComplete
+  Guid:
+    Data1: -521061783
+    Data2: 1151620564
+    Data3: -1693948283
+    Data4: 1023739991
+  Banks:
+  - {fileID: -3716144231502446623}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 75
+  Length: 3526
+--- !u!114 &3046932109244429412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Tuile/Ui/Button Switch
+  m_EditorClassIdentifier: 
+  Path: event:/Tuile/Ui/Button Switch
+  Guid:
+    Data1: -1985943881
+    Data2: 1270030916
+    Data3: 732004537
+    Data4: -540377425
+  Banks:
+  - {fileID: -3716144231502446623}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &3226615218097082377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Tuile/Monster/Idle_Chicken
+  m_EditorClassIdentifier: 
+  Path: event:/Tuile/Monster/Idle_Chicken
+  Guid:
+    Data1: 889004970
+    Data2: 1195393611
+    Data3: -1717847936
+    Data4: 1004109393
+  Banks:
+  - {fileID: -3716144231502446623}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 7.4
+  Length: 650
+--- !u!114 &3294629972181343424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/poubelle/Tilee/Enviro
+  m_EditorClassIdentifier: 
+  Path: event:/poubelle/Tilee/Enviro
+  Guid:
+    Data1: 1857797935
+    Data2: 1091402882
+    Data3: -1218984030
+    Data4: 266828565
+  Banks:
+  - {fileID: -3716144231502446623}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 180004
+--- !u!114 &3730819685659511018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/poubelle/Charactere/Wood_Cutting
+  m_EditorClassIdentifier: 
+  Path: event:/poubelle/Charactere/Wood_Cutting
+  Guid:
+    Data1: -1897872345
+    Data2: 1325285265
+    Data3: 384776578
+    Data4: -1615390757
+  Banks:
+  - {fileID: -3716144231502446623}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 800
+--- !u!114 &3936608242453793934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Tuile/Character/Actions/Stomp
+  m_EditorClassIdentifier: 
+  Path: event:/Tuile/Character/Actions/Stomp
+  Guid:
+    Data1: 1898880811
+    Data2: 1091700596
+    Data3: 880229551
+    Data4: -52398880
+  Banks:
+  - {fileID: -3716144231502446623}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -3914949842345859215}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &4498500390706560964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/poubelle/Charactere/Stomp
+  m_EditorClassIdentifier: 
+  Path: event:/poubelle/Charactere/Stomp
+  Guid:
+    Data1: -733997601
+    Data2: 1141279193
+    Data3: -2029700469
+    Data4: 145250677
+  Banks:
+  - {fileID: -3716144231502446623}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 300
+--- !u!114 &4540669607016407484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Tuile/Character/Voix/Drawning
+  m_EditorClassIdentifier: 
+  Path: event:/Tuile/Character/Voix/Drawning
+  Guid:
+    Data1: 1280156066
+    Data2: 1327915526
+    Data3: 1602595772
+    Data4: -1714238455
+  Banks:
+  - {fileID: -3716144231502446623}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &5575131151492690794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Tuile/Character/Actions/Drowning
+  m_EditorClassIdentifier: 
+  Path: event:/Tuile/Character/Actions/Drowning
+  Guid:
+    Data1: 1472587627
+    Data2: 1235720872
+    Data3: 874941105
+    Data4: 1402026637
+  Banks:
+  - {fileID: -3716144231502446623}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1620
+--- !u!114 &5690091745990550083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Tuile/Character/Actions/Collect
+  m_EditorClassIdentifier: 
+  Path: event:/Tuile/Character/Actions/Collect
+  Guid:
+    Data1: 537331442
+    Data2: 1297186304
+    Data3: -1171883600
+    Data4: 67936507
+  Banks:
+  - {fileID: -3716144231502446623}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 10000
+  Length: 375
+--- !u!114 &5722120372380485356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Tuile/Character/Voix/Throw
+  m_EditorClassIdentifier: 
+  Path: event:/Tuile/Character/Voix/Throw
+  Guid:
+    Data1: -658994829
+    Data2: 1233965166
+    Data3: 225396915
+    Data4: -1042457281
+  Banks:
+  - {fileID: -3716144231502446623}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &6200627695394108661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/poubelle/Charactere/Pistol/Douile
+  m_EditorClassIdentifier: 
+  Path: event:/poubelle/Charactere/Pistol/Douile
+  Guid:
+    Data1: -632309760
+    Data2: 1096472941
+    Data3: 1207691433
+    Data4: -198562015
+  Banks:
+  - {fileID: -3716144231502446623}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2190
+--- !u!114 &6252141637380521600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Move/GroundType
+  m_EditorClassIdentifier: 
+  Name: GroundType
+  StudioPath: 
+  Min: 0
+  Max: 3
+  Default: 0
+  ID:
+    data1: 2037150591
+    data2: 3285532144
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - Rock
+  - Wood
+  - Neutral
+  - Sand
+  Exists: 1
+--- !u!114 &6359802989981734732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Tuile/Character/Voix/Take
+  m_EditorClassIdentifier: 
+  Path: event:/Tuile/Character/Voix/Take
+  Guid:
+    Data1: 377241435
+    Data2: 1075526899
+    Data3: -1498960502
+    Data4: -458663549
+  Banks:
+  - {fileID: -3716144231502446623}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1000
+--- !u!114 &7351941617614126084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Tuile/Ui/Mission
+  m_EditorClassIdentifier: 
+  Path: event:/Tuile/Ui/Mission
+  Guid:
+    Data1: 2106545739
+    Data2: 1258237811
+    Data3: 2089302959
+    Data4: 229371509
+  Banks:
+  - {fileID: -3716144231502446623}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2277
+--- !u!114 &7448712034848018108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Tuile/Character/Actions/Release
+  m_EditorClassIdentifier: 
+  Path: event:/Tuile/Character/Actions/Release
+  Guid:
+    Data1: 2070929156
+    Data2: 1133366267
+    Data3: -1685396822
+    Data4: -166455879
+  Banks:
+  - {fileID: -3716144231502446623}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &7837688007217801941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Tuile/Tile/TileCreated
+  m_EditorClassIdentifier: 
+  Path: event:/Tuile/Tile/TileCreated
+  Guid:
+    Data1: -1675704454
+    Data2: 1299298765
+    Data3: 978207625
+    Data4: 1493849552
+  Banks:
+  - {fileID: -3716144231502446623}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &7893276282672357135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Tuile/Ui/Button
+  m_EditorClassIdentifier: 
+  Path: event:/Tuile/Ui/Button
+  Guid:
+    Data1: 1278010753
+    Data2: 1145679181
+    Data3: 75439293
+    Data4: -877881939
+  Banks:
+  - {fileID: -3716144231502446623}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &8065664754641919336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD/FMOD Bateau Tile/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638561142987449550
+  FileSizes:
+  - Name: Desktop
+    Value: 3200
+  Exists: 1
+--- !u!114 &8677118555228156943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Terraformingdown/GroundType
+  m_EditorClassIdentifier: 
+  Name: GroundType
+  StudioPath: 
+  Min: 0
+  Max: 3
+  Default: 0
+  ID:
+    data1: 2037150591
+    data2: 3285532144
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - Rock
+  - Wood
+  - Neutral
+  - Sand
+  Exists: 1
+--- !u!114 &9115076691067116846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Tuile/Ui/Chest
+  m_EditorClassIdentifier: 
+  Path: event:/Tuile/Ui/Chest
+  Guid:
+    Data1: -239166858
+    Data2: 1237115325
+    Data3: -255144513
+    Data4: -1580457420
+  Banks:
+  - {fileID: -3716144231502446623}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4292
+--- !u!114 &9211225471906779016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Tuile/Ui/Camera
+  m_EditorClassIdentifier: 
+  Path: event:/Tuile/Ui/Camera
+  Guid:
+    Data1: 1712104001
+    Data2: 1128453712
+    Data3: -612421449
+    Data4: -770485671
+  Banks:
+  - {fileID: -3716144231502446623}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3500
