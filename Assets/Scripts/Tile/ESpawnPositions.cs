@@ -3,13 +3,15 @@
 public enum ESpawnPositions
 {
     Nothing = 0,
-    Pos1 = 1,
-    Pos2 = 2,
-    Pos3 = 4,
-    Pos4 = 8,
-    Pos5 = 16,
-    Pos6 = 32,
-    Pos7 = 64,
+    Pos0 = 1,
+    Pos1 = 2,
+    Pos2 = 4,
+    Pos3 = 8,
+    Pos4 = 16,
+    Pos5 = 32,
+    Pos6 = 64,
+    Pos7 = 128,
+    Pos8 = 256,
     Everything = 0b1111
 }
 

@@ -1,3 +1,4 @@
+using System.Collections;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -5,7 +6,7 @@ using UnityEngine.InputSystem;
 
 public class Player : NetworkBehaviour
 {
-    public enum EPlayerState { Idle, Walk, Jump};
+    public enum EPlayerState { Idle, Walk, Jump, Drawning};
     private EPlayerState _PlayerState;
     public EPlayerState PlayerState { get => _PlayerState; set => ChangePlayerState(value); }
     public CharacterController CharacterController { get => CharacterController;}
@@ -66,8 +67,14 @@ public class Player : NetworkBehaviour
                 _Animator.SetFloat("JumpRand", Random.Range(0f, 1f));
                 _PM.ApplyJump();
                 break;
+            case EPlayerState.Drawning:
+                _PM.YVelocity = -.5f;
+                StartCoroutine(_PM.DrawningEnum());
+                break;
+
         }
     }
+
 
     private void OnPlayerStateExit(EPlayerState newPlayerState)
     {
@@ -114,6 +121,14 @@ public class Player : NetworkBehaviour
         if (_PM.AutoJump && _CharacterController.isGrounded && hit.normal.y > -0.2f && hit.normal.y < 0.2f  && hitTile.transform.position.y - TileUnder.transform.position.y <= 1 && hitTile.transform.position.y - TileUnder.transform.position.y > .3f && _PlayerState != EPlayerState.Jump)
         {
             PlayerState = EPlayerState.Jump;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Water"))
+        {
+            PlayerState = EPlayerState.Drawning;
         }
     }
 }

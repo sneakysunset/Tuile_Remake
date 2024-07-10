@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using TriInspector;
+using System.Collections;
 
 [DeclareTabGroup("Movement")]
 
@@ -9,10 +10,13 @@ public class PlayerMovement : MonoBehaviour
 {
 
     [SerializeField, Group("Movement"), Tab("Jump")] public float _JumpStrength = 3.0f;
-    [SerializeField, Group("Movement"), Tab("Jump")] public float _GravityMultiplier = 3.0f;
+    private float _GravityMult;
+    [SerializeField, Group("Movement"), Tab("Jump")] public float _GravityMultiplier ;
+    [SerializeField, Group("Movement"), Tab("Jump")] public float _GravityMultiplierInWater ;
     [SerializeField, Group("Movement"), Tab("Jump")] private bool autoJump = true;
     [SerializeField, Group("Movement"), Tab("Rotate")] private float _SmoothTime = 0.05f;
     [SerializeField, Group("Movement"), Tab("Move")] private float _SpeedValue;
+    [SerializeField, Group("Movement"), Tab("Drawning")] private float _DrawningDuration;
 
     private Vector3 _Direction;
     private float _yVelocity;
@@ -21,6 +25,8 @@ public class PlayerMovement : MonoBehaviour
     private Player _Player;
     public Vector3 Direction { get => _Direction; set => _Direction = value; }
     public bool AutoJump { get => autoJump; set => autoJump = value; }
+    public float GravityMult { get => _GravityMult; set => _GravityMult = value; }
+    public float YVelocity { get => _yVelocity; set => _yVelocity = value; }
 
     private void Start()
     {
@@ -68,16 +74,21 @@ public class PlayerMovement : MonoBehaviour
 
     public void ApplyGravity()
     {
-        if (_Controller.isGrounded && _yVelocity < 0.0f)
+        if(_Player.PlayerState == Player.EPlayerState.Drawning)
         {
-            _yVelocity = -1.0f;
+            YVelocity += _gravity * _GravityMultiplierInWater * Time.deltaTime;
+        }
+        else if (_Controller.isGrounded && YVelocity < 0.0f)
+        {
+            YVelocity = -1.0f;
         }
         else
         {
-            _yVelocity += _gravity * _GravityMultiplier * Time.deltaTime;
+            YVelocity += _gravity * _GravityMultiplier * Time.deltaTime;
         }
+        
 
-        _Direction.y = _yVelocity;
+        _Direction.y = YVelocity;
     }
     private float _CurrentVelocity;
 
@@ -99,11 +110,19 @@ public class PlayerMovement : MonoBehaviour
 
     public void ApplyJump()
     {
-        _yVelocity = _JumpStrength;
+        YVelocity = _JumpStrength;
     }
 
     private void SpeedModifier()
     {
 
+    }
+
+
+    public IEnumerator DrawningEnum()
+    {
+        yield return new WaitForSeconds(_DrawningDuration);
+        transform.position = new Vector3(0, 5, 0);
+        _Player.PlayerState = Player.EPlayerState.Idle;
     }
 }

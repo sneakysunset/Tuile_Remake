@@ -142,7 +142,7 @@ public class TileEditorFunctions : MonoBehaviour
                     foreach (Transform t in tr) DestroyImmediate(t.gameObject);
                 }
                 Interactor itemToSpawn = GetInteractorByMaterialType(materialType);
-                if (itemToSpawn == null) return;
+                if (itemToSpawn == null) continue;
 
                 Interactor interactor = PrefabUtility.InstantiatePrefab(itemToSpawn) as Interactor;
                 interactor.transform.parent = tr;
@@ -176,13 +176,13 @@ public class TileEditorFunctions : MonoBehaviour
 
     private bool[] GetSpawnPositions(int flagNum)
     {
-        bool[] bools = new bool[7];
+        bool[] bools = new bool[9];
         if (flagNum == -1)
         {
             for (int i = 0; i < bools.Length; i++) bools[i] = true;
             return bools;
         }
-        int moduloNum = 64;
+        int moduloNum = 256;
         for (int i = bools.Length - 1; i >= 0; i--)
         {
             bools[i] = IterateThroughFlags(ref flagNum, moduloNum);

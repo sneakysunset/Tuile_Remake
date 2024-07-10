@@ -8,6 +8,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1285163159271679190, guid: 50f144a3b1f58304cb0e6cabdabd7bdb, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4061399700154781597, guid: 50f144a3b1f58304cb0e6cabdabd7bdb, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 4061399700154781597, guid: 50f144a3b1f58304cb0e6cabdabd7bdb, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 4061399700154781597, guid: 50f144a3b1f58304cb0e6cabdabd7bdb, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 4921779568860264671, guid: 50f144a3b1f58304cb0e6cabdabd7bdb, type: 3}
+      propertyPath: m_Size.y
+      value: 1.401732
+      objectReference: {fileID: 0}
+    - target: {fileID: 4921779568860264671, guid: 50f144a3b1f58304cb0e6cabdabd7bdb, type: 3}
+      propertyPath: m_Center.y
+      value: 0.695866
+      objectReference: {fileID: 0}
     - target: {fileID: 7904585707682665173, guid: 50f144a3b1f58304cb0e6cabdabd7bdb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -50,7 +74,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8963030863309491810, guid: 50f144a3b1f58304cb0e6cabdabd7bdb, type: 3}
       propertyPath: m_Name
-      value: Interactor_Tree
+      value: Tree_Inter
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
