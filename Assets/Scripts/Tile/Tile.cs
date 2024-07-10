@@ -1,29 +1,22 @@
-﻿using UnityEditor;
+﻿using System.Collections;
 using UnityEngine;
+using TriInspector;
 
-[System.Serializable]
-public partial class Tile : MonoBehaviour
+[DeclareBoxGroup("Spawn Interactors")]
+public class Tile : MonoBehaviour
 {
-
-    [System.Flags]
-    public enum ESpawnPositions
-    {
-        Nothing = 0,
-        Pos1 = 1,
-        Pos2 = 2,
-        Pos3 = 4,
-        Pos4 = 8,
-        Pos5 = 16,
-        Pos6 = 32,
-        Pos7 = 64,
-        Everything = 0b1111
-    }
-
-    [SerializeField] private bool _Walkable = false;
     [SerializeField] private ETileTypes _TileType = ETileTypes.Neutral;
-    [SerializeField] private ESpawnPositions _SpawnPositions = ESpawnPositions.Nothing;
-    [SerializeField] private Vector2Int _Coordinates;
+    [SerializeField, Group("Spawn Interactors")] private ESpawnPositions _SpawnPositions = ESpawnPositions.Nothing;
+    [SerializeField, Group("Spawn Interactors")] private EMaterialType _SpawnMaterialType = EMaterialType.Neutral;
+ 
+    [SerializeField] private bool _Walkable = false;
+    private Vector2Int _Coordinates;
+
     private float _Height = 0;
+    private IEnumerator _DegradationEnumHandle;
+    private TileNetworkOperations _TileNetworkOperations;
+    private TileEditorFunctions _TileEditorFunctions;
+    
 
     #region public fields
     public Vector2Int Coordinates { get => _Coordinates; set => _Coordinates = value; }
@@ -36,6 +29,47 @@ public partial class Tile : MonoBehaviour
     public float Height { get => _Height; set => _Height = value; }
     #endregion
 
+    private void OnEnable()
+    {
+        _TileNetworkOperations = GetComponent<TileNetworkOperations>();
+        _TileNetworkOperations._onNetworkConnect += OnNetworkConnection;
+    }
+
+    private void OnDisable()
+    {
+        _TileNetworkOperations._onNetworkConnect -= OnNetworkConnection;
+    }
+
+    public void OnNetworkConnection()
+    {
+        _DegradationEnumHandle = DegradationTimer();
+        _TileEditorFunctions = GetComponent<TileEditorFunctions>();   
+        _TileNetworkOperations = GetComponent<TileNetworkOperations>(); 
+
+        StartCoroutine(_DegradationEnumHandle);
+    }
+
+
+    IEnumerator DegradationTimer()
+    {
+        while(transform.position.y >= -1)
+        {
+            float timerValue = GetDegradationTimer();
+            yield return new WaitUntil(() => _TileType != ETileTypes.Sand && _TileType != ETileTypes.Undegradable);
+            yield return new WaitForSeconds(timerValue);
+            _TileNetworkOperations.UpdateClientsPositionClientRpc();
+        }
+        _TileNetworkOperations.UpdateClientsPositionClientRpc(10);
+    }
+
+    private float GetDegradationTimer()
+    {
+        float randomTimeValue = Random.Range(_TileEditorFunctions.TileGeneralData.baseMinTimerDegradation, _TileEditorFunctions.TileGeneralData.baseMaxTimerDegradation);
+        return randomTimeValue / DegradationManager.Instance.GetDegradationEvolutionValue() / DegradationManager.Instance.GetDegradationMultByTileType(TileType);
+    }
+
+
+
 
     public void UpdateModel() => GetComponent<TileEditorFunctions>().UpdateModel();
 
@@ -47,22 +81,12 @@ public partial class Tile : MonoBehaviour
         if (this == null) return;
         GetComponent<TileEditorFunctions>().UpdateModel();
     }
+
+    [Button, Group("Spawn Interactors")]
+    public void SpawnItems()
+    {
+        GetComponent<TileEditorFunctions>().SpawnInteractors(_SpawnMaterialType, _SpawnPositions);
+    }
 #endif
 }
 
-[CustomEditor(typeof(Tile))]
-[System.Serializable, CanEditMultipleObjects]
-public class TileEditor : Editor
-{
-    private Tile _Tile;
-
-    private void OnEnable()
-    {
-        _Tile = (Tile)target;
-    }
-
-    private void OnSceneGUI()
-    {
-        
-    }
-}

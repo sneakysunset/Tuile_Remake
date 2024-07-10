@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Windows;
 
-public class Player : MonoBehaviour
+
+public class Player : NetworkBehaviour
 {
     public enum EPlayerState { Idle, Walk, Jump};
     private EPlayerState _PlayerState;
@@ -25,11 +23,26 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+        if (!IsOwner) return;
         _PM = GetComponent<PlayerMovement>();
         _Animator = GetComponentInChildren<Animator>();
         _CharacterController = GetComponent<CharacterController>();
         _CameraTarget.parent = null;
         GroundType = ETileTypes.Rock.ToString();
+    }
+
+    public override void OnNetworkSpawn()
+    {
+        if(!IsOwner)
+        {
+            GetComponent<PlayerMovement>().enabled = false; 
+            GetComponent<Player_TileDetection>().enabled = false;
+            GetComponent<CharacterController>().enabled = false;
+            GetComponent<PlayerInput>().enabled = false;
+            enabled = false;
+            return;
+        }
+        base.OnNetworkSpawn();
     }
 
     private void ChangePlayerState(EPlayerState newPlayerState)
@@ -95,7 +108,9 @@ public class Player : MonoBehaviour
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
         if (!hit.transform.GetComponentInParent<Tile>()) { return; }
+        if (TileUnder == null) return;
         Tile hitTile = hit.transform.GetComponentInParent<Tile>();
+
         if (_PM.AutoJump && _CharacterController.isGrounded && hit.normal.y > -0.2f && hit.normal.y < 0.2f  && hitTile.transform.position.y - TileUnder.transform.position.y <= 1 && hitTile.transform.position.y - TileUnder.transform.position.y > .3f && _PlayerState != EPlayerState.Jump)
         {
             PlayerState = EPlayerState.Jump;

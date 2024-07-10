@@ -17,12 +17,15 @@ using UnityEngine;
 [DeclareHorizontalGroup("Data/FRock Tile")]
 [DeclareHorizontalGroup("Data/FSand Tile")]
 [DeclareHorizontalGroup("Data/Disabled Tile")]
+[DeclareHorizontalGroup("Data/DegradationTimer")]
 
 [CreateAssetMenu(fileName = "Tile Data", menuName = "TileData")]
 public class SO_TileData : ScriptableObject
 {
     #region Parameters
     [Group("Data"), Tab("Parameters")] public float tourbillonSpeed;
+    [Group("Data/DegradationTimer"), Tab("Parameters")] public float baseMinTimerDegradation;
+    [Group("Data/DegradationTimer"), Tab("Parameters")] public float baseMaxTimerDegradation;
     #endregion
     #region Mesh & Mat
     [Tab("Mesh Mat"), Group("Data/Center Tile")] public Mesh centerMesh;
@@ -45,11 +48,8 @@ public class SO_TileData : ScriptableObject
     [Tab("Fade Mesh Mat"), Group("Data/FSand Tile")] public Material fdesertMatTop, fdesertMatBottom;
     [Tab("Mesh Mat"), Group("Data/Disabled Tile")] public Material disabledMaterial;
     #endregion
-/*    #region Interactors
-    [Group("Filons Prefabs")] public Interactor treePrefab;
-    [Group("Filons Prefabs")] public Interactor rockPrefab;
-    [Group("Filons Prefabs")] public Interactor goldPrefab;
-    [Group("Filons Prefabs")] public Interactor diamondPrefab; 
-    [Group("Filons Prefabs")] public Interactor adamantiumPrefab;
-    #endregion*/
+    #region Interactor
+    [Group("Data"), Tab("Interactors")] public Interactor treePrefab;
+    [Group("Data"), Tab("Interactors")] public Interactor rockPrefab;
+    #endregion
 }

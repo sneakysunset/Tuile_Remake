@@ -15,6 +15,7 @@ public class Player_AnimEvents : MonoBehaviour
 
     public void OnWalkEvent()
     {
+        return;
         _WalkEvent = FMODUnity.RuntimeManager.CreateInstance("event:/Tuile/Character/Actions/Move");
         _WalkEvent.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(/*P_SysWalkingL.transform*/transform));
         _WalkEvent.setParameterByNameWithLabel("GroundType", _Player.GroundType);

@@ -1,0 +1,169 @@
+<?xml version="1.0"?>
+<TileDataList xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Tiles>
+    <TileData>
+      <Coordinates>
+        <x>0</x>
+        <y>0</y>
+      </Coordinates>
+      <Walkable>true</Walkable>
+      <TileType>Neutral</TileType>
+      <Interactors />
+      <Height>0</Height>
+    </TileData>
+    <TileData>
+      <Coordinates>
+        <x>0</x>
+        <y>1</y>
+      </Coordinates>
+      <Walkable>true</Walkable>
+      <TileType>Neutral</TileType>
+      <Interactors />
+      <Height>3</Height>
+    </TileData>
+    <TileData>
+      <Coordinates>
+        <x>0</x>
+        <y>2</y>
+      </Coordinates>
+      <Walkable>true</Walkable>
+      <TileType>Neutral</TileType>
+      <Interactors />
+      <Height>0</Height>
+    </TileData>
+    <TileData>
+      <Coordinates>
+        <x>0</x>
+        <y>3</y>
+      </Coordinates>
+      <Walkable>true</Walkable>
+      <TileType>Neutral</TileType>
+      <Interactors />
+      <Height>-1</Height>
+    </TileData>
+    <TileData>
+      <Coordinates>
+        <x>1</x>
+        <y>0</y>
+      </Coordinates>
+      <Walkable>true</Walkable>
+      <TileType>Neutral</TileType>
+      <Interactors>
+        <Interactors>Wood:1</Interactors>
+        <Interactors>Wood:3</Interactors>
+        <Interactors>Wood:5</Interactors>
+      </Interactors>
+      <Height>0</Height>
+    </TileData>
+    <TileData>
+      <Coordinates>
+        <x>1</x>
+        <y>1</y>
+      </Coordinates>
+      <Walkable>true</Walkable>
+      <TileType>Neutral</TileType>
+      <Interactors />
+      <Height>0</Height>
+    </TileData>
+    <TileData>
+      <Coordinates>
+        <x>1</x>
+        <y>2</y>
+      </Coordinates>
+      <Walkable>true</Walkable>
+      <TileType>Neutral</TileType>
+      <Interactors />
+      <Height>0</Height>
+    </TileData>
+    <TileData>
+      <Coordinates>
+        <x>1</x>
+        <y>3</y>
+      </Coordinates>
+      <Walkable>true</Walkable>
+      <TileType>Neutral</TileType>
+      <Interactors />
+      <Height>0</Height>
+    </TileData>
+    <TileData>
+      <Coordinates>
+        <x>2</x>
+        <y>0</y>
+      </Coordinates>
+      <Walkable>true</Walkable>
+      <TileType>Neutral</TileType>
+      <Interactors />
+      <Height>0</Height>
+    </TileData>
+    <TileData>
+      <Coordinates>
+        <x>2</x>
+        <y>1</y>
+      </Coordinates>
+      <Walkable>true</Walkable>
+      <TileType>Wood</TileType>
+      <Interactors />
+      <Height>3</Height>
+    </TileData>
+    <TileData>
+      <Coordinates>
+        <x>2</x>
+        <y>2</y>
+      </Coordinates>
+      <Walkable>true</Walkable>
+      <TileType>Neutral</TileType>
+      <Interactors />
+      <Height>0</Height>
+    </TileData>
+    <TileData>
+      <Coordinates>
+        <x>2</x>
+        <y>3</y>
+      </Coordinates>
+      <Walkable>true</Walkable>
+      <TileType>Neutral</TileType>
+      <Interactors />
+      <Height>0</Height>
+    </TileData>
+    <TileData>
+      <Coordinates>
+        <x>3</x>
+        <y>0</y>
+      </Coordinates>
+      <Walkable>true</Walkable>
+      <TileType>Neutral</TileType>
+      <Interactors />
+      <Height>0</Height>
+    </TileData>
+    <TileData>
+      <Coordinates>
+        <x>3</x>
+        <y>1</y>
+      </Coordinates>
+      <Walkable>true</Walkable>
+      <TileType>Neutral</TileType>
+      <Interactors />
+      <Height>0</Height>
+    </TileData>
+    <TileData>
+      <Coordinates>
+        <x>3</x>
+        <y>2</y>
+      </Coordinates>
+      <Walkable>true</Walkable>
+      <TileType>Neutral</TileType>
+      <Interactors />
+      <Height>0</Height>
+    </TileData>
+    <TileData>
+      <Coordinates>
+        <x>3</x>
+        <y>3</y>
+      </Coordinates>
+      <Walkable>true</Walkable>
+      <TileType>Rock</TileType>
+      <Interactors />
+      <Height>1</Height>
+    </TileData>
+  </Tiles>
+</TileDataList>

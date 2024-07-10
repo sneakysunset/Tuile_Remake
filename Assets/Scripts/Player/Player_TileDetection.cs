@@ -13,7 +13,8 @@ public class Player_TileDetection : MonoBehaviour
 
     private void Update()
     {
-        GetTileUnder();
+        if(TileSystem.Instance.IsGenerationOver)
+            GetTileUnder();
     }
 
     private void GetTileUnder()

@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Tile Data
   m_EditorClassIdentifier: 
   tourbillonSpeed: 0
+  baseMinTimerDegradation: 15
+  baseMaxTimerDegradation: 18
   centerMesh: {fileID: 3163171260390484736, guid: 2eca40f471670324ba33f876ca2de259, type: 3}
   centerMat: {fileID: 2100000, guid: b797f39b12d44a8448842238403a9512, type: 2}
   centerMatBottom: {fileID: 2100000, guid: d50b940920843574bbf8290e0a38e5b4, type: 2}
@@ -40,3 +42,5 @@ MonoBehaviour:
   fdesertMatTop: {fileID: 2100000, guid: 772503c41269da54ba9cbba14da9f670, type: 2}
   fdesertMatBottom: {fileID: 2100000, guid: 772503c41269da54ba9cbba14da9f670, type: 2}
   disabledMaterial: {fileID: 2100000, guid: 20de2eb994387b84c87f32d664a1d1a3, type: 2}
+  treePrefab: {fileID: 3297218522150579826, guid: 872d3f49b98b1b549aecf15564306a7e, type: 3}
+  rockPrefab: {fileID: 3297218522150579826, guid: 357f754512e7beb4ab60804f5b705103, type: 3}

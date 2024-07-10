@@ -13,17 +13,22 @@ public class TileData
     public bool Walkable;
     [XmlElement("TileType")]
     public ETileTypes TileType;
-    [XmlElement("SpawnPositions")]
-    public ESpawnPositions SpawnPositions;
+    [XmlArrayItem("Interactors")]
+    public List<string> Interactors;
     [XmlElement("Height")]
     public float Height;
 
-    public TileData (Vector2Int coordinates, bool walkable, ETileTypes tileType, ESpawnPositions spawnPositions, float height)
+    public TileData (Vector2Int coordinates, bool walkable, ETileTypes tileType, Interactor[] interactors, float height)
     {
         Coordinates = coordinates;
         Walkable = walkable;
         TileType = tileType;
-        SpawnPositions = spawnPositions;
+        Interactors = new List<string>();
+        foreach(var interactor in interactors)
+        {
+            string interactorString = $"{interactor.MaterialType}:{interactor.transform.parent.GetSiblingIndex()}";
+            Interactors.Add(interactorString);
+        }
         Height = height;
     }
 

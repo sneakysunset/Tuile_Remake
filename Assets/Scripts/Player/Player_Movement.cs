@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
@@ -31,6 +30,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        if (!_Player.IsOwner)
+            return;
         OnPlayerStateUpdate();
         if(_Controller.isGrounded && _Player.PlayerState == Player.EPlayerState.Jump)
         {
@@ -52,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
             case Player.EPlayerState.Idle:
                 if (_Direction.x != 0 || _Direction.z != 0) _Player.PlayerState = Player.EPlayerState.Walk;
                 actions.Remove(ApplyRotation);
-                actions.Remove(ApplyMovement);
+                //actions.Remove(ApplyMovement);
                 break;
             case Player.EPlayerState.Walk:
                 if (_Direction.x == 0 && _Direction.z == 0) _Player.PlayerState = Player.EPlayerState.Idle;

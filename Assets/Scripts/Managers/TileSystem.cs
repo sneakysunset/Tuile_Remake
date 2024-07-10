@@ -8,6 +8,7 @@ using System.Runtime.CompilerServices;
 using System;
 using System.Xml.Serialization;
 using System.Collections;
+using Unity.Netcode;
 
 [DeclareTabGroup("Tile Generation"), DeclareHorizontalGroup("Tile Generation/Instantiation")]
 public class TileSystem : Singleton<TileSystem>
@@ -17,6 +18,7 @@ public class TileSystem : Singleton<TileSystem>
     public int TileRows { get => _TileRows; }
     public int TileColumns { get => _TileColumns; }
     public Tile TilePrefab { get => _TilePrefab; }
+    public bool IsGenerationOver { get => _IsGenerationOver; }
 
     [SerializeField, Group("Tile Generation/Instantiation"), Tab("Tile Generation")] private Tile _TilePrefab;
     [SerializeField, Group("Tile Generation/Instantiation"), Tab("Tile Generation")] private int _TileRows;
@@ -24,8 +26,8 @@ public class TileSystem : Singleton<TileSystem>
     [SerializeField, Group("Tile Generation"), Tab("Tile Generation")] private Transform _TileFolder;
     [SerializeField, Group("Tile Generation"), Tab("Tile Generation")] private bool _AllowGridEdition;
     [SerializeField, Group("Tile Generation"), Tab("Data Management")] private string _FileName;
+    private bool _IsGenerationOver;
     private List<TileData> _TileDataArray;
-
     [Button, Group("Tile Generation"), Tab("Data Management")]
     public void SaveArray()
     {
@@ -33,7 +35,8 @@ public class TileSystem : Singleton<TileSystem>
         string filePath = Application.streamingAssetsPath + "\\Maps\\" + _FileName + ".xml";
         foreach (var tile in _Tiles)
         {
-            TileData data = new TileData(tile.Coordinates, tile.Walkable, tile.TileType, tile.SpawnPositions, tile.transform.position.y);
+            Interactor[] interactors = tile.GetComponentsInChildren<Interactor>();  
+            TileData data = new TileData(tile.Coordinates, tile.Walkable, tile.TileType, interactors, tile.transform.position.y);
             _TileDataArray.Add(data);
         }
         TileDataWrapper wrapper = new TileDataWrapper(_TileDataArray);
@@ -45,11 +48,14 @@ public class TileSystem : Singleton<TileSystem>
         }
     }
 
-    private void Start()
+    private IEnumerator Start()
     {
-        LoadArray();
+        yield return new WaitUntil(()=> NetworkManager.Singleton.IsListening );
+        GetTilesReferences();
+        //LoadArray();
     }
 
+#if UNITY_EDITOR
     [Button, Group("Tile Generation"), Tab("Data Management")]
     public void LoadArray() => StartCoroutine(LoadArrayEnum());
     private IEnumerator LoadArrayEnum()
@@ -77,6 +83,7 @@ public class TileSystem : Singleton<TileSystem>
                 for (int j = 0; j < maxColumn; j++)
                 {
                     TileData tileD = _TileDataArray.Where(m => m.Coordinates.x == i && m.Coordinates.y == j).FirstOrDefault();
+
                     _Tiles[i, j] = PrefabUtility.InstantiatePrefab(TilePrefab) as Tile;
                     _Tiles[i, j].transform.parent = _TileFolder;
                     _Tiles[i, j].transform.position = GridUtils.indexToWorldPos(i, j, TilePrefab.transform);
@@ -84,7 +91,8 @@ public class TileSystem : Singleton<TileSystem>
                     _Tiles[i, j].gameObject.name = i + "  " + j;
                     _Tiles[i, j].Walkable = tileD.Walkable;
                     _Tiles[i, j].TileType = tileD.TileType;
-                    _Tiles[i, j].SpawnPositions = tileD.SpawnPositions;
+                    TileEditorFunctions tef = _Tiles[i, j].GetComponent<TileEditorFunctions>();
+                    foreach (var interactor in tileD.Interactors) tef.LoadSpawnInteractor(interactor.Split(':')[0], int.Parse(interactor.Split(':')[1]));
                     _Tiles[i, j].Height = tileD.Height;
                     _Tiles[i, j].transform.position = new Vector3(_Tiles[i, j].transform.position.x, tileD.Height, _Tiles[i, j].transform.position.z);
                     _Tiles[i, j].UpdateModel();
@@ -92,11 +100,35 @@ public class TileSystem : Singleton<TileSystem>
                         yield return null;
                 }
             }
+            _IsGenerationOver = true;
+
             yield return null;
         }
     }
+#endif
 
 
+    public void SpawnTile(int row, int column)
+    {
+        _Tiles[row, column] = Instantiate(TilePrefab, GridUtils.indexToWorldPos(row, column, TilePrefab.transform), Quaternion.identity, _TileFolder) as Tile;
+        _Tiles[row, column].GetComponent<NetworkObject>().Spawn();
+    }
+
+    [ShowIf("_AllowGridEdition"), Button, Group("Tile Generation"), Tab("Tile Generation")]
+    public void DestroyGrid()
+    {
+        Tile[] previousTiles = FindObjectsOfType<Tile>();
+        if (previousTiles != null && previousTiles.Length > 0)
+        {
+#if UNITY_EDITOR
+            foreach (Tile tile in previousTiles) DestroyImmediate(tile.gameObject);
+#else
+            foreach (Tile tile in previousTiles) Destroy(tile.gameObject);
+#endif
+        }
+    }
+
+#if UNITY_EDITOR
     [ShowIf("_AllowGridEdition"), Button, Group("Tile Generation"), Tab("Tile Generation")]
     public void InstantiateGrid()
     {
@@ -116,15 +148,7 @@ public class TileSystem : Singleton<TileSystem>
         }
     }
 
-    [ShowIf("_AllowGridEdition"), Button, Group("Tile Generation"), Tab("Tile Generation")]
-    public void DestroyGrid()
-    {
-        Tile[] previousTiles = FindObjectsOfType<Tile>();
-        if (previousTiles != null && previousTiles.Length > 0)
-        {
-            foreach (Tile tile in previousTiles) DestroyImmediate(tile.gameObject);
-        }
-    }
+
 
     [ShowIf("_AllowGridEdition"), Button, Group("Tile Generation"), Tab("Tile Generation")]
     public void UpdateGrid()
@@ -166,6 +190,7 @@ public class TileSystem : Singleton<TileSystem>
             Debug.Log(tile.name);
         }
     }
+#endif
 
     [Button, Group("Tile Generation"), Tab("Tile Generation")]
     private void GetTilesReferences()
