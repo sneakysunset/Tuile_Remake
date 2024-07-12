@@ -93,7 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1285163159271679190}
   - component: {fileID: 4921779568860264671}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -145,8 +145,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7904585707682665173}
+  - component: {fileID: 7560878354351444334}
   - component: {fileID: 5161521091090751837}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Base_Inter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -170,6 +171,27 @@ Transform:
   - {fileID: 1285163159271679190}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7560878354351444334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8963030863309491810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 2132629267
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!114 &5161521091090751837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,3 +204,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8ce2fafad43ded4984fd9c263b038c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _MiningDuration: 1
+  _ItemToSpawn: {fileID: 6121667137286636496, guid: ca9657a18302f6647a31d3f387b79889, type: 3}

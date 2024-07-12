@@ -22,4 +22,9 @@ public class Player_AnimEvents : MonoBehaviour
         _WalkEvent.start();
        // pSysWalkingR.Play();
     }
+
+    public void OnHitEvent()
+    {
+        return;
+    }
 }

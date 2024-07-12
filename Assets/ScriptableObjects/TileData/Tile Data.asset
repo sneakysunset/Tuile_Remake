@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Tile Data
   m_EditorClassIdentifier: 
   tourbillonSpeed: 0
-  baseMinTimerDegradation: 15
-  baseMaxTimerDegradation: 18
+  baseMinTimerDegradation: 23
+  baseMaxTimerDegradation: 28
   centerMesh: {fileID: 3163171260390484736, guid: 2eca40f471670324ba33f876ca2de259, type: 3}
   centerMat: {fileID: 2100000, guid: b797f39b12d44a8448842238403a9512, type: 2}
   centerMatBottom: {fileID: 2100000, guid: d50b940920843574bbf8290e0a38e5b4, type: 2}

@@ -177,7 +177,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 3
-    m_ConditionEvent: IdleRand
+    m_ConditionEvent: RdModifier
     m_EventTreshold: 0.2
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -4892704204569835987}
@@ -229,7 +229,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 4
-    m_ConditionEvent: JumpRand
+    m_ConditionEvent: RdModifier
     m_EventTreshold: 0.08
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1512417010992872095}
@@ -358,7 +358,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 4
-    m_ConditionEvent: DanceRand
+    m_ConditionEvent: RdModifier
     m_EventTreshold: 0.5
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -896894487231802386}
@@ -389,19 +389,7 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: DanceRand
-    m_Type: 1
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
-  - m_Name: IdleRand
-    m_Type: 1
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
-  - m_Name: JumpRand
+  - m_Name: RdModifier
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -568,7 +556,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 3
-    m_ConditionEvent: DanceRand
+    m_ConditionEvent: RdModifier
     m_EventTreshold: 0.5
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -1664714369509262307}
@@ -593,7 +581,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 3
-    m_ConditionEvent: IdleRand
+    m_ConditionEvent: RdModifier
     m_EventTreshold: 0.2
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 2098276207531471491}
@@ -674,7 +662,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 4
-    m_ConditionEvent: IdleRand
+    m_ConditionEvent: RdModifier
     m_EventTreshold: 0.2
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 5558291871947654798}
@@ -825,7 +813,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 4
-    m_ConditionEvent: IdleRand
+    m_ConditionEvent: RdModifier
     m_EventTreshold: 0.2
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -8070141078027631663}
@@ -923,7 +911,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 3
-    m_ConditionEvent: IdleRand
+    m_ConditionEvent: RdModifier
     m_EventTreshold: -1
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 5558291871947654798}
@@ -970,7 +958,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 3
-    m_ConditionEvent: JumpRand
+    m_ConditionEvent: RdModifier
     m_EventTreshold: 0.08
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 206846947456720981}
@@ -1049,7 +1037,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 3
-    m_ConditionEvent: IdleRand
+    m_ConditionEvent: RdModifier
     m_EventTreshold: -1
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 2098276207531471491}

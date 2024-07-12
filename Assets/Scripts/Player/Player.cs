@@ -6,18 +6,20 @@ using UnityEngine.InputSystem;
 
 public class Player : NetworkBehaviour
 {
-    public enum EPlayerState { Idle, Walk, Jump, Drawning};
+    public enum EPlayerState { Idle, Walk, Jump, Drawning, Mine};
     private EPlayerState _PlayerState;
     public EPlayerState PlayerState { get => _PlayerState; set => ChangePlayerState(value); }
-    public CharacterController CharacterController { get => CharacterController;}
+    public CharacterController Controller { get => _Controller;}
     public Tile TileUnder { get => _TileUnder; set => _TileUnder = value; }
     public Vector2 Input { get => _Input; set => _Input = value; }
     public string GroundType { get => _GroundType; set => _GroundType = value; }
 
     [SerializeField] private Transform _CameraTarget;
-    private CharacterController _CharacterController;
+    private CharacterController _Controller;
     private Tile _TileUnder;
-    private PlayerMovement _PM;
+    private Player_Movement _PMovement;
+    private Player_Mining _PMining;
+    private Player_ItemSystem _PItemSystem;
     private Vector2 _Input;
     private Animator _Animator;
     private string _GroundType;
@@ -25,25 +27,29 @@ public class Player : NetworkBehaviour
     private void Start()
     {
         if (!IsOwner) return;
-        _PM = GetComponent<PlayerMovement>();
+        _PMovement = GetComponent<Player_Movement>();
         _Animator = GetComponentInChildren<Animator>();
-        _CharacterController = GetComponent<CharacterController>();
+        _Controller = GetComponent<CharacterController>();
+        _PMining = GetComponent<Player_Mining>();
+        _PItemSystem = GetComponent<Player_ItemSystem>();
         _CameraTarget.parent = null;
         GroundType = ETileTypes.Rock.ToString();
     }
 
     public override void OnNetworkSpawn()
     {
+        base.OnNetworkSpawn();
         if(!IsOwner)
         {
-            GetComponent<PlayerMovement>().enabled = false; 
+            GetComponent<Player_Movement>().enabled = false; 
             GetComponent<Player_TileDetection>().enabled = false;
             GetComponent<CharacterController>().enabled = false;
             GetComponent<PlayerInput>().enabled = false;
+            GetComponent<Player_Mining>().enabled = false;
+            GetComponent<Player_ItemSystem>().enabled = false;
             enabled = false;
             return;
         }
-        base.OnNetworkSpawn();
     }
 
     private void ChangePlayerState(EPlayerState newPlayerState)
@@ -55,21 +61,22 @@ public class Player : NetworkBehaviour
     }
     private void Update()
     {
-        _CameraTarget.position = transform.position;
+        if(IsOwner)
+            _CameraTarget.position = transform.position;
     }
 
     private void OnPlayerStateEnter(EPlayerState oldPlayerState)
     {
         _Animator.Play(_PlayerState.ToString());
+        _Animator.SetFloat("RdModifier", Random.Range(0f, 1f));
         switch (_PlayerState)
         {
             case EPlayerState.Jump:
-                _Animator.SetFloat("JumpRand", Random.Range(0f, 1f));
-                _PM.ApplyJump();
+                _PMovement.ApplyJump();
                 break;
             case EPlayerState.Drawning:
-                _PM.YVelocity = -.5f;
-                StartCoroutine(_PM.DrawningEnum());
+                _PMovement.YVelocity = -.5f;
+                StartCoroutine(_PMovement.DrawningEnum());
                 break;
 
         }
@@ -91,7 +98,7 @@ public class Player : NetworkBehaviour
         Input = inputValue.Get<Vector2>();
         float cameraAngle = -Camera.main.transform.rotation.eulerAngles.y;
         Input = Rotate(Input, cameraAngle);
-        _PM.Direction = new Vector3(Input.x, 0.0f, Input.y);
+        _PMovement.Direction = new Vector3(Input.x, 0.0f, Input.y);
         _Animator.SetFloat("walkingSpeed", Input.magnitude);
     }
 
@@ -118,7 +125,7 @@ public class Player : NetworkBehaviour
         if (TileUnder == null) return;
         Tile hitTile = hit.transform.GetComponentInParent<Tile>();
 
-        if (_PM.AutoJump && _CharacterController.isGrounded && hit.normal.y > -0.2f && hit.normal.y < 0.2f  && hitTile.transform.position.y - TileUnder.transform.position.y <= 1 && hitTile.transform.position.y - TileUnder.transform.position.y > .3f && _PlayerState != EPlayerState.Jump)
+        if (_PMovement.AutoJump && _Controller.isGrounded && hit.normal.y > -0.2f && hit.normal.y < 0.2f  && hitTile.transform.position.y - TileUnder.transform.position.y <= 1 && hitTile.transform.position.y - TileUnder.transform.position.y > .3f && _PlayerState != EPlayerState.Jump)
         {
             PlayerState = EPlayerState.Jump;
         }

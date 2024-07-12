@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using TriInspector;
+using Unity.Netcode;
 
 [DeclareBoxGroup("Spawn Interactors")]
 public class Tile : MonoBehaviour
@@ -42,6 +43,7 @@ public class Tile : MonoBehaviour
 
     public void OnNetworkConnection()
     {
+        //yield return new WaitUntil(()=> NetworkManager.Singleton.IsListening)
         _DegradationEnumHandle = DegradationTimer();
         _TileEditorFunctions = GetComponent<TileEditorFunctions>();   
         _TileNetworkOperations = GetComponent<TileNetworkOperations>(); 
@@ -88,5 +90,6 @@ public class Tile : MonoBehaviour
         GetComponent<TileEditorFunctions>().SpawnInteractors(_SpawnMaterialType, _SpawnPositions);
     }
 #endif
+
 }
 

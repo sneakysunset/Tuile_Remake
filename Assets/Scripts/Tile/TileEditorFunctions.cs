@@ -12,6 +12,7 @@ public class TileEditorFunctions : MonoBehaviour
     [SerializeField] private MeshFilter _MainFilter;
     [SerializeField] private Transform _SpawnPositions;
     [SerializeField] private SO_TileData _TileGeneralData;
+    [SerializeField] private Tile_InteractorSpawner _InteractorSpawner;
 
     private Tile _Tile;
 
@@ -144,10 +145,13 @@ public class TileEditorFunctions : MonoBehaviour
                 Interactor itemToSpawn = GetInteractorByMaterialType(materialType);
                 if (itemToSpawn == null) continue;
 
-                Interactor interactor = PrefabUtility.InstantiatePrefab(itemToSpawn) as Interactor;
+                Tile_InteractorSpawner interactor = PrefabUtility.InstantiatePrefab(_InteractorSpawner) as Tile_InteractorSpawner;
                 interactor.transform.parent = tr;
                 interactor.transform.localPosition = Vector3.zero;
-                interactor.MaterialType = materialType;
+                interactor._InteractorToSpawn = itemToSpawn;
+                interactor._ParentTile = _Tile;
+                interactor.GetComponent<MeshFilter>().sharedMesh = itemToSpawn.GetComponentInChildren<MeshFilter>().sharedMesh;
+                interactor.GetComponent<MeshRenderer>().sharedMaterial= itemToSpawn.GetComponentInChildren<MeshRenderer>().sharedMaterial;
             }
         }
     }

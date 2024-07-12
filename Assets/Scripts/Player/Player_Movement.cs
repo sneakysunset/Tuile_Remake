@@ -6,7 +6,7 @@ using System.Collections;
 
 [DeclareTabGroup("Movement")]
 
-public class PlayerMovement : MonoBehaviour
+public class Player_Movement : MonoBehaviour
 {
 
     [SerializeField, Group("Movement"), Tab("Jump")] public float _JumpStrength = 3.0f;
