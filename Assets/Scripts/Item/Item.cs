@@ -33,11 +33,11 @@ public class Item : NetworkBehaviour, IGrabbable
 
     private void Update()
     {
-        UpdatePosition();
+        UpdatePositionClientRpc();
     }
 
     [ClientRpc]
-    void UpdatePosition()
+    void UpdatePositionClientRpc()
     {
         transform.position = _ParentTransform.position; 
         transform.rotation = _ParentTransform.rotation;
