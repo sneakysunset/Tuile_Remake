@@ -5,7 +5,12 @@ using UnityEngine;
 public class MonoBehaviourExtension : Singleton<MonoBehaviourExtension>
 {
     public delegate void SlowUpdateEvent();
-    public static SlowUpdateEvent slowUpdate;
+    public static SlowUpdateEvent _onSlowUpdate;
+
+    public delegate void SessionStartedEvent();
+    public static SessionStartedEvent _onSessionStarted;
+
+    public bool IsSessionStarted;
 
     private void Start()
     {
@@ -14,6 +19,12 @@ public class MonoBehaviourExtension : Singleton<MonoBehaviourExtension>
 
     void SlowUpdate()
     {
-        slowUpdate?.Invoke();
+        _onSlowUpdate?.Invoke();
+    }
+
+    public void OnSessionStarted()
+    {
+        IsSessionStarted = true;
+        _onSessionStarted?.Invoke();
     }
 }

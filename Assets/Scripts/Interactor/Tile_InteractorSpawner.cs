@@ -11,6 +11,7 @@ public class Tile_InteractorSpawner : MonoBehaviour
     IEnumerator Start()
     {
         yield return new WaitUntil(()=>NetworkManager.Singleton.IsListening);
+        _ParentTile = transform.parent.parent.GetComponentInParent<Tile>(); 
         if(NetworkManager.Singleton.IsServer)
             SpawnServerRpc();
         GetComponent<MeshRenderer>().enabled = false;
@@ -21,13 +22,6 @@ public class Tile_InteractorSpawner : MonoBehaviour
     {
         Interactor interactor = Instantiate(_InteractorToSpawn, transform.position, Quaternion.identity);
         interactor.NetworkObject.Spawn();
-        SetParentTileClientRpc(interactor);
-        interactor._OwnerTile = _ParentTile;
-    }
-
-    [ClientRpc]
-    void SetParentTileClientRpc(Interactor interactor)
-    {
         interactor._OwnerTile = _ParentTile;
     }
 }

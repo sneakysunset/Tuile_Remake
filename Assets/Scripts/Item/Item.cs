@@ -39,8 +39,11 @@ public class Item : NetworkBehaviour, IGrabbable
     [ClientRpc]
     void UpdatePositionClientRpc()
     {
-        transform.position = _ParentTransform.position; 
-        transform.rotation = _ParentTransform.rotation;
+        if(_ParentTransform != null)
+        {
+            transform.position = _ParentTransform.position; 
+            transform.rotation = _ParentTransform.rotation;
+        }
     }
 
     

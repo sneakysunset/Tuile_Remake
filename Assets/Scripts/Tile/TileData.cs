@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Xml.Serialization;
+using Unity.Netcode;
 using UnityEngine;
 using static Tile;
 
 [Serializable]
-public class TileData
+public class TileData 
 {
     [XmlElement("Coordinates")]
     public Vector2Int Coordinates;
@@ -18,6 +20,7 @@ public class TileData
     [XmlElement("Height")]
     public float Height;
 
+    public TileData() { }
     public TileData (Vector2Int coordinates, bool walkable, ETileTypes tileType, Interactor[] interactors, float height)
     {
         Coordinates = coordinates;
@@ -32,7 +35,6 @@ public class TileData
         Height = height;
     }
 
-    public TileData() { }
 }
 
 [Serializable]

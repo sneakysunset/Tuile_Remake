@@ -19,14 +19,15 @@ public class Interactor : NetworkBehaviour
         yield return new WaitUntil(() => IsSpawned);
         if (IsServer)
         {
-            _OwnerTile.GetComponent<TileNetworkOperations>().ChangeTilePosition += UpdateInteractorPosition;
+            _OwnerTile.ChangeTilePosition += UpdateInteractorPosition;
             _MeshRenderer = GetComponentInChildren<Renderer>();
         }
     }
 
     private void OnDisable()
     {
-        _OwnerTile.GetComponent<TileNetworkOperations>().ChangeTilePosition -= UpdateInteractorPosition;
+        if(IsServer) 
+            _OwnerTile.ChangeTilePosition -= UpdateInteractorPosition;
         if(_Player != null)
         {
             _Player.OnStopMining();
@@ -72,6 +73,7 @@ public class Interactor : NetworkBehaviour
     [ClientRpc]
     public void OnInteractorMinedClientRpc()
     {
+        if(IsOwner) 
         gameObject.SetActive(false);
     }
 

@@ -19,12 +19,12 @@ public class Player_ItemSystem : MonoBehaviour
 
     private void OnEnable()
     {
-        MonoBehaviourExtension.slowUpdate += SlowUpdate;
+        MonoBehaviourExtension._onSlowUpdate += SlowUpdate;
     }
 
     private void OnDisable()
     {
-        MonoBehaviourExtension.slowUpdate -= SlowUpdate;
+        MonoBehaviourExtension._onSlowUpdate -= SlowUpdate;
     }
 
     private void OnTriggerStay(Collider other)

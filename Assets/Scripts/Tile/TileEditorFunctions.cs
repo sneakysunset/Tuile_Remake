@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using Unity.Networking.Transport;
 using UnityEditor;
 using UnityEngine;
@@ -20,13 +21,13 @@ public class TileEditorFunctions : MonoBehaviour
 
     private void OnEnable()
     {
-
-        GetComponent<TileNetworkOperations>()._onNetworkConnect += OnNetworkConnection;
+        _Tile = GetComponent<Tile>();
+        _Tile._onNetworkConnect += OnNetworkConnection;
     }
 
     private void OnDisable()
     {
-        GetComponent<TileNetworkOperations>()._onNetworkConnect -= OnNetworkConnection;
+        _Tile._onNetworkConnect -= OnNetworkConnection;
     }
 
     private void OnNetworkConnection()
@@ -37,18 +38,18 @@ public class TileEditorFunctions : MonoBehaviour
     public void UpdateModel()
     {
 
-            _Tile = GetComponent<Tile>();
-            if (getCorrespondingMat(_Tile.TileType) != null)
-            {
-                Material[] mats = getCorrespondingMat(_Tile.TileType);
-                if (!Application.isPlaying) _MainRenderer.sharedMaterials = mats;
-                else _MainRenderer.materials = mats;
-            }
+        _Tile = GetComponent<Tile>();
+        if (getCorrespondingMat(_Tile.TileType) != null)
+        {
+            Material[] mats = getCorrespondingMat(_Tile.TileType);
+            if (!Application.isPlaying) _MainRenderer.sharedMaterials = mats;
+            else _MainRenderer.materials = mats;
+        }
 
-            if (getCorrespondingMesh(_Tile.TileType) != null)
-            {
-                _MainFilter.sharedMesh = getCorrespondingMesh(_Tile.TileType);
-            }
+        if (getCorrespondingMesh(_Tile.TileType) != null)
+        {
+            _MainFilter.sharedMesh = getCorrespondingMesh(_Tile.TileType);
+        }
     }
 
     public Material[] getCorrespondingMat(ETileTypes tType)
@@ -165,7 +166,7 @@ public class TileEditorFunctions : MonoBehaviour
         }
     }
 #endif
-    private Interactor GetInteractorByMaterialType(EMaterialType materialType)
+    public Interactor GetInteractorByMaterialType(EMaterialType materialType)
     {
         switch (materialType)
         {
@@ -209,11 +210,24 @@ public class TileEditorFunctions : MonoBehaviour
 #if UNITY_EDITOR
     public void LoadSpawnInteractor(string materialName, int childIndex)
     {
-        Interactor prefab = GetInteractorByMaterialType(Enum.Parse<EMaterialType>(materialName));
-        Transform tr = _SpawnPositions.GetChild(childIndex);
-        Interactor interactor = PrefabUtility.InstantiatePrefab(prefab) as Interactor;
-        interactor.transform.parent = tr;
+        Tile_InteractorSpawner interactor = PrefabUtility.InstantiatePrefab(_InteractorSpawner) as Tile_InteractorSpawner;
+        interactor.transform.parent = _SpawnPositions.GetChild(childIndex);
         interactor.transform.localPosition = Vector3.zero;
+        Interactor itemToSpawn = GetInteractorByMaterialType(Enum.Parse<EMaterialType>(materialName));
+        interactor._InteractorToSpawn = itemToSpawn;
+        interactor._ParentTile = _Tile;
+        interactor.GetComponent<MeshFilter>().sharedMesh = itemToSpawn.GetComponentInChildren<MeshFilter>().sharedMesh;
+        interactor.GetComponent<MeshRenderer>().sharedMaterial = itemToSpawn.GetComponentInChildren<MeshRenderer>().sharedMaterial;
     }
 #endif
+
+    public void LoadInteractor(string materialName, int childIndex)
+    {
+        Transform parent = _SpawnPositions.GetChild(childIndex);
+        Interactor itemToSpawn = GetInteractorByMaterialType(Enum.Parse<EMaterialType>(materialName));
+        Quaternion rotation = Quaternion.Euler(0, UnityEngine.Random.Range(0, 6) * 60, 0);
+        Interactor interactor = Instantiate(itemToSpawn, parent.transform.position, rotation);
+        interactor._OwnerTile = GetComponent<Tile>();
+        interactor.NetworkObject.Spawn();
+    }
 }

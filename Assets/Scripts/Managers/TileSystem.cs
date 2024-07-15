@@ -35,7 +35,8 @@ public class TileSystem : Singleton<TileSystem>
         string filePath = Application.streamingAssetsPath + "\\Maps\\" + _FileName + ".xml";
         foreach (var tile in _Tiles)
         {
-            Interactor[] interactors = tile.GetComponentsInChildren<Interactor>();  
+            Tile_InteractorSpawner[] interactorSpawners = tile.GetComponentsInChildren<Tile_InteractorSpawner>();
+            Interactor[] interactors = interactorSpawners.Select(i => i._InteractorToSpawn).ToArray();
             TileData data = new TileData(tile.Coordinates, tile.Walkable, tile.TileType, interactors, tile.transform.position.y);
             _TileDataArray.Add(data);
         }
@@ -51,11 +52,14 @@ public class TileSystem : Singleton<TileSystem>
     private IEnumerator Start()
     {
         yield return new WaitUntil(()=> NetworkManager.Singleton.IsListening );
-        GetTilesReferences();
+        if(NetworkManager.Singleton.IsServer)
+        {
+            LoadArray();
+        }
+        //GetTilesReferences();
         //LoadArray();
     }
 
-#if UNITY_EDITOR
     [Button, Group("Tile Generation"), Tab("Data Management")]
     public void LoadArray() => StartCoroutine(LoadArrayEnum());
     private IEnumerator LoadArrayEnum()
@@ -76,28 +80,59 @@ public class TileSystem : Singleton<TileSystem>
             _TileRows = maxRow;
             _TileColumns = maxColumn;
 
+#if UNITY_EDITOR
             DestroyGrid();
 
+            if (!Application.isPlaying)
+            {
+                for (int i = 0; i < maxRow; i++)
+                {
+                    for (int j = 0; j < maxColumn; j++)
+                    {
+                        TileData tileD = _TileDataArray.Where(m => m.Coordinates.x == i && m.Coordinates.y == j).FirstOrDefault();
+
+                        _Tiles[i, j] = PrefabUtility.InstantiatePrefab(TilePrefab) as Tile;
+                        _Tiles[i, j].transform.parent = _TileFolder;
+                        _Tiles[i, j].transform.position = GridUtils.indexToWorldPos(i, j, TilePrefab.transform);
+                        _Tiles[i, j].Coordinates = new Vector2Int(i, j);
+                        _Tiles[i, j].gameObject.name = i + "  " + j;
+                        _Tiles[i, j].Walkable = tileD.Walkable;
+                        _Tiles[i, j].TileType = tileD.TileType;
+                        TileEditorFunctions tef = _Tiles[i, j].GetComponent<TileEditorFunctions>();
+                        foreach (var interactor in tileD.Interactors) tef.LoadSpawnInteractor(interactor.Split(':')[0], int.Parse(interactor.Split(':')[1]));
+                        _Tiles[i, j].Height = tileD.Height;
+                        _Tiles[i, j].transform.position = new Vector3(_Tiles[i, j].transform.position.x, tileD.Height, _Tiles[i, j].transform.position.z);
+                        _Tiles[i, j].UpdateModel();
+                        if (Application.isPlaying)
+                            yield return null;
+                    }
+                }
+            }
+#else
+
+#endif
             for (int i = 0; i < maxRow; i++)
             {
                 for (int j = 0; j < maxColumn; j++)
                 {
                     TileData tileD = _TileDataArray.Where(m => m.Coordinates.x == i && m.Coordinates.y == j).FirstOrDefault();
+                    Vector3 position = GridUtils.indexToWorldPos(i, j, TilePrefab.transform) + Vector3.up * tileD.Height;
+                    _Tiles[i, j] = Instantiate(TilePrefab, position, Quaternion.identity, _TileFolder);
+                    _Tiles[i, j].NetworkObject.Spawn();
+                    _Tiles[i, j].UpdateDataRpc(tileD.Walkable, tileD.TileType, tileD.Height);
+                    TileEditorFunctions tef = _Tiles[i, j].GetComponent<TileEditorFunctions>(); 
+                    foreach (var interactor in tileD.Interactors) tef.LoadInteractor(interactor.Split(':')[0], int.Parse(interactor.Split(':')[1]));
 
-                    _Tiles[i, j] = PrefabUtility.InstantiatePrefab(TilePrefab) as Tile;
-                    _Tiles[i, j].transform.parent = _TileFolder;
-                    _Tiles[i, j].transform.position = GridUtils.indexToWorldPos(i, j, TilePrefab.transform);
-                    _Tiles[i, j].Coordinates = new Vector2Int(i, j);
+                    yield return null;
+                    /*_Tiles[i, j].Coordinates = new Vector2Int(i, j);
                     _Tiles[i, j].gameObject.name = i + "  " + j;
                     _Tiles[i, j].Walkable = tileD.Walkable;
                     _Tiles[i, j].TileType = tileD.TileType;
                     TileEditorFunctions tef = _Tiles[i, j].GetComponent<TileEditorFunctions>();
-                    foreach (var interactor in tileD.Interactors) tef.LoadSpawnInteractor(interactor.Split(':')[0], int.Parse(interactor.Split(':')[1]));
+                    foreach (var interactor in tileD.Interactors) tef.LoadInteractor(interactor.Split(':')[0], int.Parse(interactor.Split(':')[1]));
                     _Tiles[i, j].Height = tileD.Height;
-                    _Tiles[i, j].transform.position = new Vector3(_Tiles[i, j].transform.position.x, tileD.Height, _Tiles[i, j].transform.position.z);
                     _Tiles[i, j].UpdateModel();
-                    if (Application.isPlaying)
-                        yield return null;
+                    _Tiles[i, j].NetworkObject.Spawn();*/
                 }
             }
             _IsGenerationOver = true;
@@ -105,7 +140,6 @@ public class TileSystem : Singleton<TileSystem>
             yield return null;
         }
     }
-#endif
 
 
     public void SpawnTile(int row, int column)
